@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cl_root_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:fontFamily="@font/open_sans"
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="Contact Details"
+                android:textColor="@color/material_light_white"
+                android:textSize="16dp" />
+
+            <!--<android.support.design.widget.AppBarLayout-->
+            <!--android:id="@+id/abl_top"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <!--<android.support.v7.widget.Toolbar-->
+            <!--android:id="@+id/toolbar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="?attr/actionBarSize"-->
+            <!--android:background="?attr/colorPrimary">-->
+
+            <!--</android.support.v7.widget.Toolbar>-->
+            <!--</android.support.design.widget.AppBarLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans"
+                    android:text="Name"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/text_color_dark"
+                    android:textSize="14dp" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_border_view"
+                    android:fontFamily="@font/open_sans"
+                    android:hint="Full Nmae "
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/text_color_dark"
+                    android:textSize="14dp" />
+
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/open_sans"
+                    android:text="Email ID"
+                    android:textColor="@color/text_color_dark"
+                    android:textSize="14dp" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_border_view"
+                    android:fontFamily="@font/open_sans"
+                    android:hint="Eg: Emaple@Gmail.com"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/text_color_dark"
+                    android:textSize="14dp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/open_sans"
+                    android:text="Phone No"
+                    android:textColor="@color/text_color_dark"
+                    android:textSize="14dp" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_border_view"
+                    android:fontFamily="@font/open_sans"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/text_color_dark"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:elevation="20dp"
+        android:padding="8dp"
+        android:visibility="gone" />
+
+</android.support.design.widget.CoordinatorLayout>

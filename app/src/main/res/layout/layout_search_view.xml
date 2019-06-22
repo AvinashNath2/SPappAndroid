@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:background="@color/material_light_white"
+    android:elevation="4dp"
+    android:id="@+id/search_view"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:fontFamily="@font/open_sans"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:layout_width="match_parent"
+        android:textStyle="normal"
+        app:fontFamily="@font/open_sans"
+        android:text="Find Location to book parking "
+        android:textColor="@color/text_color_dark"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/text_color_light"/>
+
+    <LinearLayout
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:dividerHeight="2dp"
+            android:id="@+id/lv1"
+            android:layout_height="match_parent"
+            android:layout_width="40dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_search_black_36dp"
+            android:tint="@color/colorPrimaryDark" />
+
+        <EditText
+            android:background="@null"
+            android:hint="Search Location Eg; Gurugram"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:fontFamily="@font/open_sans"
+            android:textColorHint="@color/text_color_light"
+            android:paddingLeft="5dp"
+            android:textColor="@color/material_grey_800" />
+
+    </LinearLayout>
+</LinearLayout>

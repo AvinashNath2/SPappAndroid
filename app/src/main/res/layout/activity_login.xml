@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:background="@color/activity_bg_color"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@android:drawable/sym_def_app_icon" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_light"
+            android:text="You Need to sign in or create a new account to continue."
+            android:textSize="28dp"
+            android:layout_marginTop="10dp"
+            tools:fontFamily="@font/open_sans_semibold" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/org_address_cv"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:elevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:src="@drawable/googleg_standard_color_18"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:layout_marginRight="50dp"
+                    android:text="Google Login"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_light"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="By proceeding with creating account you agree to our Terms &amp; Condition and private policy"
+            android:textSize="12dp"
+            android:layout_marginTop="10dp"
+            tools:fontFamily="@font/open_sans" />
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
