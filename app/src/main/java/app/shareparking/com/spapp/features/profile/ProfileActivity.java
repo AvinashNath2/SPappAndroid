@@ -1,21 +1,33 @@
-package app.shareparking.com.spapp.features.profile.view;
+package app.shareparking.com.spapp.features.profile;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-
-import com.hannesdorfmann.mosby3.mvp.MvpActivity;
-
 import app.shareparking.com.spapp.R;
-import app.shareparking.com.spapp.features.profile.presenter.ProfilePresenter;
+import app.shareparking.com.spapp.baseComponents.BaseActivity;
 
-public class ProfileActivity extends MvpActivity<ProfileView, ProfilePresenter> {
+public class ProfileActivity extends BaseActivity implements ProfileContract.ProfileContractView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pofile);
 
-//        RestService service = RetrofitInstance.getRetrofitInstance().create(RestService.class);
+    }
+
+    @Override
+    protected void getExtras() {
+
+    }
+
+    @Override
+    protected void activityRunning() {
+
+    }
+
+    @Override
+    protected int getLayoutResourceId() {
+        return R.layout.activity_pofile;
+
+        //        RestService service = RetrofitInstance.getRetrofitInstance().create(RestService.class);
 //        ;
 //
 //        Observable<List<TempClass>> observable = service.lsitOfComments()
@@ -30,13 +42,16 @@ public class ProfileActivity extends MvpActivity<ProfileView, ProfilePresenter> 
 //                throwable -> {
 //                    Toast.makeText(ProfileActivity.this, "Some Error Occurred", Toast.LENGTH_SHORT).show();
 //                });
+    }
+
+    @Override
+    protected void showLoading() {
 
     }
 
-    @NonNull
     @Override
-    public ProfilePresenter createPresenter() {
-        return new ProfilePresenter();
+    protected void hideLoading() {
+
     }
 
 }
