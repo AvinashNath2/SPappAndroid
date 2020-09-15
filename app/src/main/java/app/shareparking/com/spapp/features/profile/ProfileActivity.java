@@ -1,31 +1,20 @@
 package app.shareparking.com.spapp.features.profile;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
+
+import androidx.annotation.Nullable;
+
 import app.shareparking.com.spapp.R;
 import app.shareparking.com.spapp.baseComponents.BaseActivity;
 
 public class ProfileActivity extends BaseActivity implements ProfileContract.ProfileContractView {
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+        super.onCreate(savedInstanceState, persistentState);
         setContentView(R.layout.activity_pofile);
-
-    }
-
-    @Override
-    protected void getExtras() {
-
-    }
-
-    @Override
-    protected void activityRunning() {
-
-    }
-
-    @Override
-    protected int getLayoutResourceId() {
-        return R.layout.activity_pofile;
 
         //        RestService service = RetrofitInstance.getRetrofitInstance().create(RestService.class);
 //        ;
@@ -44,14 +33,5 @@ public class ProfileActivity extends BaseActivity implements ProfileContract.Pro
 //                });
     }
 
-    @Override
-    protected void showLoading() {
-
-    }
-
-    @Override
-    protected void hideLoading() {
-
-    }
 
 }

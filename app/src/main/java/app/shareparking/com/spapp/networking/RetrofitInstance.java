@@ -10,6 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitInstance {
     private static Retrofit retrofit;
     private static final String BASE_URL = "https://jsonplaceholder.typicode.com/";
+    private static final String BASE_URL_TEMP = "http://sheplus.savsign.org/api/";
 
     /**
      * addConverterFactory() — converter factory for serialization and deserialization of objects
@@ -25,7 +26,7 @@ public class RetrofitInstance {
             interceptor.setLevel(logLevel);
 
             retrofit = new retrofit2.Retrofit.Builder()
-                    .baseUrl(BASE_URL)
+                    .baseUrl(BASE_URL_TEMP)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .client(new OkHttpClient.Builder().addInterceptor(interceptor).build())

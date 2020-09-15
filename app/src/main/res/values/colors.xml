@@ -12,6 +12,8 @@
 
     <color name="success_green">#7CE995</color>
 
+    <color name="grey">#c0c0c0</color>
+
     <!--<color name="colorPrimary">#ffffff</color>-->
     <!--<color name="colorPrimaryDark">#202124</color>-->
     <!--<color name="colorAccent">#ffffff</color>-->

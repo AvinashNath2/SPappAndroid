@@ -7,9 +7,9 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.widget.AppCompatSpinner;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.fragment.app.FragmentManager;
+import androidx.appcompat.widget.AppCompatSpinner;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -20,6 +20,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import app.shareparking.com.spapp.R;
 
 /**
  * @author Arpit Anand
@@ -167,7 +169,7 @@ public final class ViewUtils {
     Snackbar snackbar = Snackbar.make(v, message, Snackbar.LENGTH_LONG);
     View snackbarView = snackbar.getView();
     snackbarView.setBackgroundColor(color);
-    TextView textView= (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
+    TextView textView= (TextView) snackbarView.findViewById(R.id.snackbar_text);
     textView.setMaxLines(4);
     snackbar.show();
   }
