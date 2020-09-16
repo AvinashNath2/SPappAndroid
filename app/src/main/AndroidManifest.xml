@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".features.auth.SignUpActivity"/>
+        <activity android:name=".features.auth.SignUpActivity"
+            android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name=".features.home.HomeActivity"
-            android:label="@string/title_activity_home"
-            />
+            android:label="@string/title_activity_home" />
 
         <activity android:name=".features.chooseOptionActivity.ChooseOptionActivity" />
         <activity
@@ -34,7 +34,7 @@
             android:resource="@array/preloaded_fonts" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAWCv_AH-PVWh5jgrvoqVNgsR5wOAbE3Fw" />
+            android:value="@string/google_maps_api_key" />
     </application>
 
 </manifest>

@@ -3,10 +3,12 @@ package app.shareparking.com.spapp.features.auth;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -23,6 +25,7 @@ public class LoginActivity extends BaseActivity implements AuthListener {
 
     private ActivityLoginBinding binding;
     private LoginViewModel viewModel;
+    private Context mContext;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,6 +36,13 @@ public class LoginActivity extends BaseActivity implements AuthListener {
         binding.setViewModel(viewModel);
 
         viewModel.authListener = this;
+        mContext = this;
+
+        viewModel.createAccountLiveData.observe(this, s -> {
+            Intent intent = new Intent(mContext, SignUpActivity.class);
+            startActivity(intent);
+        });
+
     }
 
     @Override
