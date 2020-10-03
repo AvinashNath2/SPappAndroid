@@ -12,7 +12,8 @@
     <string name="title_notifications">Notifications</string>
     <string name="menu">Menu</string>
 
-    <string name="google_maps_api_key">AIzaSyAWCv_AH-PVWh5jgrvoqVNgsR5wOAbE3Fw</string>
+    <!--<string name="google_maps_api_key">AIzaSyAWCv_AH-PVWh5jgrvoqVNgsR5wOAbE3Fw</string>-->
+    <string name="google_maps_api_key">AIzaSyD2RJHbp9QE5BbzbQEZt9P5syKa1oROtzg</string>
     <string name="share_parking">Share Parking</string>
     <string name="login">Login</string>
     <string name="first_name">First Name</string>
@@ -23,4 +24,8 @@
     <string name="create_account">Create Account?</string>
     <string name="register_with_us">Register With Us</string>
     <string name="search_for_parking">Search For Parking</string>
+    <string name="profile">Profile</string>
+    <string name="rent_out_space">Rent Out Space</string>
+    <string name="logout">Logout</string>
+    <string name="search_here">Search here</string>
 </resources>

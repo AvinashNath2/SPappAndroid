@@ -9,12 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".features.auth.SignUpActivity"
-            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".features.search.SearchActivity"
+            android:windowSoftInputMode="stateAlwaysVisible"/>
+        <activity
+            android:name=".features.auth.SignUpActivity"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".features.home.HomeActivity"
             android:label="@string/title_activity_home" />
-
         <activity android:name=".features.chooseOptionActivity.ChooseOptionActivity" />
         <activity
             android:name=".features.profile.ProfileActivity"

@@ -1,7 +1,9 @@
 package app.shareparking.com.spapp.utils;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Handler;
@@ -13,6 +15,8 @@ import androidx.appcompat.widget.AppCompatSpinner;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -209,6 +213,17 @@ public final class ViewUtils {
         return false;
       }
     });
+  }
+
+  public static int pixelToDp(int pixel) {
+    return (int) (pixel * Resources.getSystem().getDisplayMetrics().density);
+  }
+
+  public static int getScreenWidth(Context context) {
+    DisplayMetrics displayMetrics = new DisplayMetrics();
+    ((Activity)context).getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+    int height = displayMetrics.heightPixels;
+    return displayMetrics.widthPixels;
   }
 
   public interface OnChangeListener {
