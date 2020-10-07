@@ -1,37 +1,30 @@
 package app.shareparking.com.spapp.features.profile;
 
+import android.content.Context;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProvider;
 
 import app.shareparking.com.spapp.R;
 import app.shareparking.com.spapp.baseComponents.BaseActivity;
+import app.shareparking.com.spapp.databinding.ActivityProfileBinding;
 
-public class ProfileActivity extends BaseActivity implements ProfileContract.ProfileContractView {
+public class ProfileActivity extends BaseActivity  {
 
+    private ProfileViewModel viewModel;
+    private ActivityProfileBinding binding;
+    private Context mContext;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
-        setContentView(R.layout.activity_pofile);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-        //        RestService service = RetrofitInstance.getRetrofitInstance().create(RestService.class);
-//        ;
-//
-//        Observable<List<TempClass>> observable = service.lsitOfComments()
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread());
-//
-//        observable.doOnTerminate(() -> {
-//
-//        }).subscribe(response -> {
-//                    Toast.makeText(ProfileActivity.this, "Ayaa", Toast.LENGTH_SHORT).show();
-//                },
-//                throwable -> {
-//                    Toast.makeText(ProfileActivity.this, "Some Error Occurred", Toast.LENGTH_SHORT).show();
-//                });
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_profile);
+        viewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
+        binding.setViewModel(viewModel);
+
+
     }
-
-
 }

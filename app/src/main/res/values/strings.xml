@@ -28,4 +28,23 @@
     <string name="rent_out_space">Rent Out Space</string>
     <string name="logout">Logout</string>
     <string name="search_here">Search here</string>
+    <string name="edit">Edit</string>
+    <string name="remove_account">Remove account</string>
+    <string name="welcome_to_share_parking">Welcome to Share Parking</string>
+    <string name="login_to_continue">Login To Continue</string>
+    <string name="or">OR</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="step_1">Step 1</string>
+    <string name="parking_location">Parking Location</string>
+    <string name="step_2">Step 2</string>
+    <string name="parking_information">Parking Information</string>
+    <string name="step_1_nparking_location">Step 1\nParking Location</string>
+    <string name="step_2_nparking_information">Step 2\nParking Information</string>
+    <string name="where_is_you_parking_space">Where is you parking Space ?</string>
+    <string name="pincode">Pincode*</string>
+    <string name="what_is_the_address_of_your_parking_space">What is the address of your parking Space? *</string>
+    <string name="only_shown_when_drivers_book_your_space">Only Shown when drivers book your space</string>
+    <string name="done_location">Done Location</string>
 </resources>

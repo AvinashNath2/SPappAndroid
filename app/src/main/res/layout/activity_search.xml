@@ -24,17 +24,21 @@
 
             <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="50dp">
 
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:contentInsetStart="0dp">
+                    app:contentInsetStart="0dp"
+                    app:contentInsetLeft="0dp"
+                    app:contentInsetStartWithNavigation="0dp"
+                    android:gravity="center">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:gravity="center">
 
                         <EditText
                             android:id="@+id/search_et"
@@ -42,8 +46,9 @@
                             android:layout_height="wrap_content"
                             android:background="@null"
                             android:hint="@string/search_here"
+                            android:textSize="15sp"
                             android:textCursorDrawable="@color/grey"
-                            android:padding="10dp" />
+                            android:layout_centerVertical="true" />
 
                         <ImageView
                             android:id="@+id/search_filter"

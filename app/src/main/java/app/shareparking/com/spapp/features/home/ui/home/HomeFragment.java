@@ -29,6 +29,7 @@ import com.google.android.gms.maps.model.MapStyleOptions;
 import app.shareparking.com.spapp.R;
 import app.shareparking.com.spapp.databinding.FragmentHomeBinding;
 import app.shareparking.com.spapp.features.search.SearchActivity;
+import app.shareparking.com.spapp.utils.IntentUtils;
 import app.shareparking.com.spapp.utils.ViewUtils;
 
 public class HomeFragment extends Fragment implements OnMapReadyCallback {
@@ -53,9 +54,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
             animateSearchBar(true);
 
             new Handler().postDelayed(() -> {
-                Intent intent = new Intent(getActivity(), SearchActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(intent);
+                IntentUtils.startIntentWithoutAnimation(getActivity(), SearchActivity.class);
             }, 200);
         });
 
@@ -65,7 +64,9 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onResume() {
         super.onResume();
-        setSearchBarDefault();
+
+        animateSearchBar(false);
+        new Handler().postDelayed(this::setSearchBarDefault, 200);
     }
 
     private void animateSearchBar(boolean animateOnTop) {

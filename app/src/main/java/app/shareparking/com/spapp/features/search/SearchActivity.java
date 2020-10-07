@@ -31,4 +31,9 @@ public class SearchActivity extends BaseActivity {
 
         mContext = this;
     }
+
+    public void onPause() {
+        super.onPause();
+        overridePendingTransition(0, 0);
+    }
 }

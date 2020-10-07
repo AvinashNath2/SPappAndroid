@@ -25,15 +25,16 @@ public class SignUpActivity extends BaseActivity implements AuthListener {
         viewModel = new ViewModelProvider(this).get(SignUpViewModel.class);
         binding.setViewModel(viewModel);
 
-        viewModel.authListener = this;
-
-        binding.toolbar.setTitle(R.string.register_with_us);
-        setSupportActionBar(binding.toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        init();
 
         viewModel.alreadyAccountLiveData.observe(this, s -> {
             finish();
         });
+    }
+
+    private void init() {
+        viewModel.authListener = this;
+        setToolbarTitle(getString(R.string.register_with_us));
     }
 
     @Override
@@ -49,12 +50,5 @@ public class SignUpActivity extends BaseActivity implements AuthListener {
     @Override
     public void onFailed(String message) {
 
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-
-        finish();
-        return super.onSupportNavigateUp();
     }
 }

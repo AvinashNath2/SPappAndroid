@@ -1,5 +1,6 @@
 package app.shareparking.com.spapp.features.home.ui.menu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,9 @@ import androidx.lifecycle.ViewModelProviders;
 
 import app.shareparking.com.spapp.R;
 import app.shareparking.com.spapp.databinding.FragmentMenuBinding;
+import app.shareparking.com.spapp.features.profile.ProfileActivity;
+import app.shareparking.com.spapp.features.rentSpace.RentSpaceActivity;
+import app.shareparking.com.spapp.utils.IntentUtils;
 
 public class MenuFragment extends Fragment {
 
@@ -33,10 +37,10 @@ public class MenuFragment extends Fragment {
         viewModel.liveData.observe(getActivity(), s -> {
             switch (s) {
                 case "profile": {
-                    Toast.makeText(getActivity(), "profile", Toast.LENGTH_SHORT).show();
+                    IntentUtils.startIntent(getActivity(), ProfileActivity.class);
                     break;
                 } case "rent": {
-                    Toast.makeText(getActivity(), "rent", Toast.LENGTH_SHORT).show();
+                    IntentUtils.startIntent(getActivity(), RentSpaceActivity.class);
                     break;
                 }
                 case "logout": {

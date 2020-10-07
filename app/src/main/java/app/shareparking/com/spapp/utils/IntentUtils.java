@@ -45,6 +45,17 @@ public class IntentUtils {
   //public static final String PROVIDER = BuildConfig.AUTHORITY;
   public static final String PROVIDER = "";
 
+  public static void startIntent(Activity context, Class<?> activity2) {
+    Intent intent = new Intent(context, activity2);
+    context.startActivity(intent);
+  }
+
+  public static void startIntentWithoutAnimation(Activity context, Class<?> activity2) {
+    Intent intent = new Intent(context, activity2);
+    intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+    context.startActivity(intent);
+  }
+
   public static void openDialer(Context context, String numberUri) {
     if (!numberUri.startsWith("tel:")) {
       numberUri = "tel:" + numberUri;
