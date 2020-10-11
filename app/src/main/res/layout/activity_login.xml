@@ -149,7 +149,7 @@
                     android:id="@+id/already_account"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="@{viewModel.createAccount}"
+                    android:onClick="@{viewModel::createAccount}"
                     android:padding="10dp"
                     android:text="@string/sign_up"
                     android:textColor="@color/material_light_black"

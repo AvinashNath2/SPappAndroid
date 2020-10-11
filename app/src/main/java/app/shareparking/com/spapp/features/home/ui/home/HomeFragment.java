@@ -27,12 +27,13 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 
 import app.shareparking.com.spapp.R;
+import app.shareparking.com.spapp.baseComponents.BaseFragment;
 import app.shareparking.com.spapp.databinding.FragmentHomeBinding;
 import app.shareparking.com.spapp.features.search.SearchActivity;
 import app.shareparking.com.spapp.utils.IntentUtils;
 import app.shareparking.com.spapp.utils.ViewUtils;
 
-public class HomeFragment extends Fragment implements OnMapReadyCallback {
+public class HomeFragment extends BaseFragment implements OnMapReadyCallback {
 
     private HomeViewModel viewModel;
     private FragmentHomeBinding binding;
@@ -99,17 +100,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         this.mMap = googleMap;
 
-        setMapStyle();
-        animateCamera(28.637103, 77.460411);
-    }
-
-    private void setMapStyle() {
-        mMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getActivity(), R.raw.map_style));
-    }
-
-    private void animateCamera(double lat, double lng) {
-        LatLng coordinate = new LatLng(lat, lng);
-        CameraUpdate location = CameraUpdateFactory.newLatLngZoom(coordinate, 15);
-        mMap.animateCamera(location);
+        setMapStyle(mMap);
+        animateCamera(28.637103, 77.460411, mMap);
     }
 }

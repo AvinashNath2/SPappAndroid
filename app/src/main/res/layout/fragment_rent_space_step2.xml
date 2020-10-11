@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -10,13 +11,441 @@
 
     </data>
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".fragments.RentSpaceStep2Fragment">
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".fragments.RentSpaceStep2Fragment">
+
+            <LinearLayout
+                android:id="@+id/details_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/set_you_space_s_picture"
+                    android:textColor="@color/material_light_black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:padding="20dp"
+                    android:text="@string/add_image"
+                    android:textColor="@color/material_indigo_900"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/how_many_spaced_do_you_have_for_rent"
+                    android:textColor="@color/material_light_black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:gravity="center"
+                        android:padding="20dp"
+                        android:src="@drawable/ic_minus" />
+
+                    <EditText
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_edittext_round_corners_black"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:maxLength="5"
+                        android:padding="10dp"
+                        android:text="@string/_0" />
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:gravity="center"
+                        android:padding="20dp"
+                        android:src="@drawable/ic_plus" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/what_is_the_largest_vehicle_your_space_can_accommodate"
+                    android:textColor="@color/material_light_black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/select_the_largest_vehicle_possible_that_can_fit_through_the_entrance_and_into_the_space_itself" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/bg_edittext_round_corners_black"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:text="@string/small"
+                        android:layout_marginStart="10dp"
+                        android:buttonTint="@color/material_purple_900"
+                        android:textColor="@color/material_light_black" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1dp"
+                        android:background="@color/grey" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:text="@string/medium"
+                        android:layout_marginStart="10dp"
+                        android:buttonTint="@color/material_purple_900"
+                        android:textColor="@color/material_light_black" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1dp"
+                        android:background="@color/grey" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:text="@string/estate_or_4x4"
+                        android:layout_marginStart="10dp"
+                        android:buttonTint="@color/material_purple_900"
+                        android:textColor="@color/material_light_black" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1dp"
+                        android:background="@color/grey" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:text="@string/van"
+                        android:layout_marginStart="10dp"
+                        android:buttonTint="@color/material_purple_900"
+                        android:textColor="@color/material_light_black" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1dp"
+                        android:background="@color/grey" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:text="@string/large_van_or_nminibus"
+                        android:layout_marginStart="10dp"
+                        android:buttonTint="@color/material_purple_900"
+                        android:textColor="@color/material_light_black" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/access_information"
+                    android:textColor="@color/material_light_black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/tick_the_box_for_options_that_apply_to_your_space" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/my_space_has_a_height_restriction_when_accessing_it"
+                        android:padding="10dp"
+                        android:layout_marginTop="5dp"
+                        android:buttonTint="@color/material_purple_900"
+                        android:layout_marginStart="15dp"/>
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/my_space_requires_a_permit"
+                        android:padding="10dp"
+                        android:layout_marginTop="5dp"
+                        android:buttonTint="@color/material_purple_900"
+                        android:layout_marginStart="15dp"/>
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/my_space_is_marked_with_a_letter_or_number"
+                        android:padding="10dp"
+                        android:layout_marginTop="5dp"
+                        android:buttonTint="@color/material_purple_900"
+                        android:layout_marginStart="15dp"/>
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/my_space_requires_a_key_or_security_or_fob_to_open_a_gate"
+                        android:padding="10dp"
+                        android:layout_marginTop="5dp"
+                        android:buttonTint="@color/material_purple_900"
+                        android:layout_marginStart="15dp"/>
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/my_space_requires_a_security_code_to_open_a_gate"
+                        android:padding="10dp"
+                        android:layout_marginTop="5dp"
+                        android:buttonTint="@color/material_purple_900"
+                        android:layout_marginStart="15dp"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/about_your_space_and_local_area"
+                    android:textColor="@color/material_light_black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/about_space_text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/don_t_include_any_contact_details_or_sensitive_information" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/bg_edittext_round_corners_black"
+                    android:lines="6"
+                    android:textSize="14sp"
+                    android:padding="5dp"
+                    android:hint="1 Space located at this location"
+                    android:gravity="start"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/access_instructions"
+                    android:textColor="@color/material_light_black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/these_are_the_instructions_that_drivers_will_receive_once_they_have_paid_to_reserve_your_space" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Is there any specific place they should park e.g. under the tree or by the fence? Are there different instructions based on which direction the driver arriving from?" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edittext_round_corners_black"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:lines="6"
+                    android:textSize="14sp"
+                    android:padding="5dp"
+                    android:gravity="start"
+                    android:hint="The space is located at this address\n\nShout you require require any assistance, you can contact the space owner, Piyush "/>
 
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/what_features_does_your_location_offer"
+                    android:textColor="@color/material_light_black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
-    </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/secured_gate"
+                        android:padding="10dp"
+                        android:layout_marginTop="5dp"
+                        android:buttonTint="@color/material_purple_900"
+                        android:layout_marginStart="20dp"/>
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cctv"
+                        android:padding="10dp"
+                        android:layout_marginTop="5dp"
+                        android:buttonTint="@color/material_purple_900"
+                        android:layout_marginStart="20dp"/>
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/electric_vehicle_charging"
+                        android:padding="10dp"
+                        android:layout_marginTop="5dp"
+                        android:buttonTint="@color/material_purple_900"
+                        android:layout_marginStart="20dp"/>
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/disabled_access"
+                        android:padding="10dp"
+                        android:layout_marginTop="5dp"
+                        android:buttonTint="@color/material_purple_900"
+                        android:layout_marginStart="20dp"/>
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lighting"
+                        android:padding="10dp"
+                        android:layout_marginTop="5dp"
+                        android:buttonTint="@color/material_purple_900"
+                        android:layout_marginStart="20dp"/>
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/covered_parking"
+                        android:padding="10dp"
+                        android:layout_marginTop="5dp"
+                        android:buttonTint="@color/material_purple_900"
+                        android:layout_marginStart="20dp"/>
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/airport_transfers"
+                        android:padding="10dp"
+                        android:layout_marginTop="5dp"
+                        android:buttonTint="@color/material_purple_900"
+                        android:layout_marginStart="20dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/details_layout"
+                android:layout_alignParentBottom="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:drawablePadding="10dp"
+                        android:gravity="center"
+                        android:onClick="@{viewModel::onBackClick}"
+                        android:padding="10dp"
+                        android:text="@string/go_back"
+                        android:textColor="@color/material_light_black"
+                        app:drawableStartCompat="@drawable/ic_back" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_round_corners_rectangle"
+                        android:padding="10dp"
+                        android:text="@string/continue_btn"
+                        android:textColor="@color/material_light_white" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </layout>

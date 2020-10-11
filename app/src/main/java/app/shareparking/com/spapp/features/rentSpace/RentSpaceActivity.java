@@ -5,6 +5,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -18,7 +19,7 @@ import app.shareparking.com.spapp.databinding.ActivityRentParkingSpaceBinding;
 import app.shareparking.com.spapp.fragments.RentSpaceStep1Fragment;
 import app.shareparking.com.spapp.fragments.RentSpaceStep2Fragment;
 
-public class RentSpaceActivity extends BaseActivity {
+public class RentSpaceActivity extends BaseActivity implements DoneLocationInterface {
 
     private RentSpaceViewModel viewModel;
     private ActivityRentParkingSpaceBinding binding;
@@ -46,21 +47,55 @@ public class RentSpaceActivity extends BaseActivity {
         rentSpaceStep1Fragment = new RentSpaceStep1Fragment();
         rentSpaceStep2Fragment = new RentSpaceStep2Fragment();
         fragmentManager = getSupportFragmentManager();
-        fragmentTransaction = fragmentManager.beginTransaction();
     }
 
     private void addFragment() {
+        fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.container,  rentSpaceStep1Fragment);
         fragmentTransaction.commit();
     }
 
     private void switchFragment(Fragment fragment) {
+        fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.container, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
-    private void switchStepSelection() {
+    @Override
+    public void onDoneLocation() {
+        switchStep2Selection();
+    }
 
+    @Override
+    public void onPressBackToLocation() {
+        onBackPressed();
+    }
+
+    public void switchStep2Selection() {
+        switchFragment(rentSpaceStep2Fragment);
+
+        binding.step1Layout.setBackground(null);
+        binding.step1Text.setTextColor(getResources().getColor(R.color.material_light_black));
+
+        binding.step2Layout.setBackground(ResourcesCompat.getDrawable(getResources()
+                , R.drawable.bg_round_corners_rectangle, null));
+        binding.step2Text.setTextColor(getResources().getColor(R.color.material_light_white));
+    }
+
+    public void switchStep1Selection() {
+
+        binding.step2Layout.setBackground(null);
+        binding.step2Text.setTextColor(getResources().getColor(R.color.material_light_black));
+
+        binding.step1Layout.setBackground(ResourcesCompat.getDrawable(getResources()
+                , R.drawable.bg_round_corners_rectangle, null));
+        binding.step1Text.setTextColor(getResources().getColor(R.color.material_light_white));
+    }
+
+    @Override
+    public void onBackPressed() {
+        switchStep1Selection();
+        super.onBackPressed();
     }
 }

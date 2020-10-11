@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -20,60 +21,78 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <include layout="@layout/layout_custom_toolbar" />
-
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="10dp"
-                android:baselineAligned="false">
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:elevation="20dp"
+                android:layout_marginBottom="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@drawable/bg_round_corners_rectangle">
+                    android:paddingBottom="10dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/step_1_nparking_location"
-                        android:gravity="center"
-                        android:textColor="@color/material_light_white"
-                        android:textStyle="bold"/>
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="10dp"
+                        android:baselineAligned="false">
+
+                        <LinearLayout
+                            android:id="@+id/step_1_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_round_corners_rectangle"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/step_1_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/step_1_nparking_location"
+                                android:textColor="@color/material_light_white"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/step_2_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/step_2_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/step_2_nparking_information"
+                                android:textColor="@color/material_light_black"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:text="@string/step_2_nparking_information"
-                        android:textColor="@color/material_light_black" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.1dp"
-                android:background="@color/grey"
-                android:layout_marginTop="10dp"/>
+            </androidx.cardview.widget.CardView>
 
             <FrameLayout
                 android:id="@+id/container"

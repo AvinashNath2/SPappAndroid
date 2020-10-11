@@ -19,7 +19,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        onBackPressed();
+        finish();
         return super.onSupportNavigateUp();
     }
 }

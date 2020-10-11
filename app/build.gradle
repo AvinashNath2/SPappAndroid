@@ -22,9 +22,21 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    dataBinding{
+    buildFeatures {
+
+        dataBinding = true
+
+        // for view binding:
+        // viewBinding = true
+    }
+
+   /* dataBinding{
         enabled = true
     }
+
+    viewBinding {
+        enabled=true
+    }*/
 }
 
 dependencies {
