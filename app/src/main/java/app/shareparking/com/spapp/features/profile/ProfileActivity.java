@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import app.shareparking.com.spapp.R;
@@ -25,6 +26,17 @@ public class ProfileActivity extends BaseActivity  {
         viewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
         binding.setViewModel(viewModel);
 
+        viewModel.clickLveData.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                switch (s) {
+                    case "back": {
+                        finish();
+                        break;
+                    }
+                }
+            }
+        });
 
     }
 }

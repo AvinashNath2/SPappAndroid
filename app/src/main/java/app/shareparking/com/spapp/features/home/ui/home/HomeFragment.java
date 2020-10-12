@@ -66,8 +66,8 @@ public class HomeFragment extends BaseFragment implements OnMapReadyCallback {
     public void onResume() {
         super.onResume();
 
-        animateSearchBar(false);
-        new Handler().postDelayed(this::setSearchBarDefault, 200);
+        //animateSearchBar(false);
+        new Handler().postDelayed(this::setSearchBarDefault, 0);
     }
 
     private void animateSearchBar(boolean animateOnTop) {

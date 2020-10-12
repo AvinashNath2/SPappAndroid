@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -12,119 +12,164 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/material_light_white">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <RelativeLayout
-                android:id="@+id/profile_layout"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:elevation="4dp"
-                android:paddingBottom="24dp">
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_back"
-                    android:padding="20dp"/>
+                    android:onClick="@{viewModel::backClick}"
+                    android:padding="15dp"/>
 
-                <ImageButton
-                    android:id="@+id/user_profile_photo"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="60dp"
-                    android:background="@drawable/profile_circular_border_imageview"
-                    android:elevation="5dp"
-                    android:padding="20dp"
-                    android:scaleType="centerCrop" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
 
-                <ImageView
-                    android:id="@+id/drop_down_option_menu"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_alignParentEnd="true"
-                    android:padding="5dp"
-                    android:layout_margin="15dp"
-                    android:src="@drawable/ic_border_color_white_36dp"
-                    app:tint="@color/material_light_black" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp">
 
-            </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Piyush Kumar"
+                            android:textColor="@color/material_light_black"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="#fff"
-                android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/edit_profile"
+                            android:textColor="@color/material_light_black"
+                            android:textSize="16sp"
+                            android:layout_marginTop="5dp"
+                            android:drawablePadding="5dp"
+                            app:drawableEndCompat="@drawable/ic_edit" />
+
+                    </LinearLayout>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/user_image"/>
+
+                </LinearLayout>
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/open_sans_semibold"
                     android:padding="20dp"
-                    android:text="Piyush Kumar" />
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginBottom="3dp"
-                    android:background="#fff"
+                    android:layout_marginTop="20dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:elevation="4dp"
-                    android:fontFamily="@font/open_sans_extrabold"
-                    android:padding="20dp"
-                    android:text="@string/edit"
-                    android:textColor="@color/material_green_700" />
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:text="kumarpiyush921@gmail.com"
+                    app:drawableEndCompat="@drawable/ic_email_outline"
+                    android:layout_marginBottom="5dp" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="#fff"
-                android:orientation="horizontal">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/grey"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"/>
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/open_sans"
                     android:padding="20dp"
-                    android:text="piyushkumar@gmail.com" />
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:text="@string/your_spaces"
+                    app:drawableEndCompat="@drawable/ic_history"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp" />
 
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="#fff"
-                android:orientation="horizontal">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/grey"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"/>
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
                     android:padding="20dp"
-                    android:text="@string/remove_account" />
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:text="@string/invite_friends"
+                    app:drawableEndCompat="@drawable/ic_invite"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/grey"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:text="@string/help"
+                    app:drawableEndCompat="@drawable/ic_help"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/grey"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:text="@string/remove_account"
+                    app:drawableEndCompat="@drawable/ic_account"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/grey"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"/>
 
             </LinearLayout>
 
-        </LinearLayout>
+        </RelativeLayout>
+
     </ScrollView>
 
 </layout>

@@ -81,4 +81,12 @@
     <string name="lighting">Lighting</string>
     <string name="covered_parking">Covered Parking</string>
     <string name="airport_transfers">Airport Transfers</string>
+    <string name="space_facilities">Space Facilities</string>
+    <string name="securely_gated">Securely Gated</string>
+    <string name="apply_and_search">Apply and Search</string>
+    <string name="clear">Clear</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="your_spaces">Your Spaces</string>
+    <string name="help">Help</string>
+    <string name="invite_friends">Invite Friends</string>
 </resources>
