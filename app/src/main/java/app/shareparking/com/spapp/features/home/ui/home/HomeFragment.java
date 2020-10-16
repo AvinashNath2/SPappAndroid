@@ -1,10 +1,7 @@
 package app.shareparking.com.spapp.features.home.ui.home;
 
-import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,25 +12,23 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.google.android.gms.maps.CameraUpdate;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MapStyleOptions;
+import com.google.android.gms.maps.model.Marker;
 
 import app.shareparking.com.spapp.R;
 import app.shareparking.com.spapp.baseComponents.BaseFragment;
 import app.shareparking.com.spapp.databinding.FragmentHomeBinding;
 import app.shareparking.com.spapp.features.search.SearchActivity;
 import app.shareparking.com.spapp.utils.IntentUtils;
+import app.shareparking.com.spapp.utils.MapUtils;
 import app.shareparking.com.spapp.utils.ViewUtils;
 
-public class HomeFragment extends BaseFragment implements OnMapReadyCallback {
+public class HomeFragment extends BaseFragment implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
     private HomeViewModel viewModel;
     private FragmentHomeBinding binding;
@@ -100,7 +95,21 @@ public class HomeFragment extends BaseFragment implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         this.mMap = googleMap;
 
-        setMapStyle(mMap);
-        animateCamera(28.637103, 77.460411, mMap);
+        MapUtils.setMapStyle(mMap, getActivity());
+        MapUtils.animateCamera(28.637103, 77.460411, mMap);
+
+        mMap.setOnMarkerClickListener(this);
+
+        MapUtils.addMarker(mMap, new LatLng(28.661587, 77.408785), null, 0, getActivity());
+        MapUtils.addMarker(mMap, new LatLng(28.642743, 77.406145), null, 1, getActivity());
+        MapUtils.addMarker(mMap, new LatLng(28.652524, 77.429947), null, 2, getActivity());
+        MapUtils.addMarker(mMap, new LatLng(28.655180, 77.396926), null, 3, getActivity());
+        MapUtils.addMarker(mMap, new LatLng(28.652846, 77.412015), null, 4, getActivity());
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        Toast.makeText(getActivity(), marker.getTag()+"", Toast.LENGTH_SHORT).show();
+        return false;
     }
 }

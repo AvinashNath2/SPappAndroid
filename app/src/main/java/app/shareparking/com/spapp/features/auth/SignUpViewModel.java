@@ -8,15 +8,15 @@ import androidx.lifecycle.ViewModel;
 public class SignUpViewModel extends ViewModel {
 
     public String firstName, lastName, email, password, confirmPassword;
-    public AuthListener authListener;
-    public MutableLiveData<String> alreadyAccountLiveData = new MutableLiveData<>();
+
+    public MutableLiveData<String> clickLiveData = new MutableLiveData<>();
 
     public void onSignUpClick(View view) {
 
     }
 
     public void alreadyHaveAnAccount(View view) {
-        alreadyAccountLiveData.postValue("");
+        clickLiveData.postValue("");
     }
 
 }

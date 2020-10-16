@@ -22,6 +22,7 @@ import app.shareparking.com.spapp.baseComponents.BaseFragment;
 import app.shareparking.com.spapp.databinding.FragmentRentSpaceStep1Binding;
 import app.shareparking.com.spapp.features.rentSpace.DoneLocationInterface;
 import app.shareparking.com.spapp.features.rentSpace.RentSpaceActivity;
+import app.shareparking.com.spapp.utils.MapUtils;
 
 public class RentSpaceStep1Fragment extends BaseFragment implements OnMapReadyCallback {
 
@@ -70,7 +71,7 @@ public class RentSpaceStep1Fragment extends BaseFragment implements OnMapReadyCa
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        setMapStyle(mMap);
-        animateCamera(28.637103, 77.460411, mMap);
+        MapUtils.setMapStyle(mMap, getActivity());
+        MapUtils.animateCamera(28.637103, 77.460411, mMap);
     }
 }

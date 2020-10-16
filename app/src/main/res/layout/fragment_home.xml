@@ -45,6 +45,9 @@
                     android:padding="12dp"
                     android:gravity="center"
                     android:textSize="15sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
                     android:layout_gravity="center"
                     app:drawableStartCompat="@drawable/ic_search" />
 

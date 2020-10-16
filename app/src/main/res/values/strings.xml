@@ -89,4 +89,8 @@
     <string name="your_spaces">Your Spaces</string>
     <string name="help">Help</string>
     <string name="invite_friends">Invite Friends</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="total_price">Total Price</string>
+    <string name="to_destination">To Destination</string>
+    <string name="some_random_address">224-238 Kensington High St, Kensington, London W8 6AG, United Kingdom</string>
 </resources>

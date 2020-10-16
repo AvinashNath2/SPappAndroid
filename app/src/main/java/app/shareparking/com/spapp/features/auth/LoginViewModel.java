@@ -1,33 +1,43 @@
 package app.shareparking.com.spapp.features.auth;
 
 import android.view.View;
-import android.widget.Toast;
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import java.util.HashMap;
+
+import app.shareparking.com.spapp.dtos.LoginModel;
+import app.shareparking.com.spapp.repositories.LoginRepository;
 import app.shareparking.com.spapp.utils.StringUtils;
 
 public class LoginViewModel extends ViewModel {
 
-    public String email = "abc@gmail.com", password = "123456";
-    public AuthListener authListener;
-    public MutableLiveData<String> createAccountLiveData = new MutableLiveData<>();
+    public String email = "Avinash@gmail.com", password = "1232323232";
+    public MutableLiveData<String> clickLiveData = new MutableLiveData<>();
+    private LoginRepository repository;
+    public LiveData<LoginModel> loginLiveData = new MutableLiveData<>();
 
     public void onLoginClick(View view) {
-        authListener.onStarted();
+        clickLiveData.postValue("login_started");
         if(StringUtils.isEmpty(email) || StringUtils.isEmpty(password)) {
-            authListener.onFailed("enter email and password");
+            clickLiveData.postValue("fields empty");
             return;
         }
+        clickLiveData.postValue("login");
 
-        //success
-        authListener.onSuccess();
+        /*HashMap<String, Object> map = new HashMap<>();
+        map.put("emailId", email);
+        map.put("password", password);
+
+        repository = new LoginRepository();
+        loginLiveData = repository.loginRequest(map);*/
 
     }
 
     public void createAccount(View view) {
-        createAccountLiveData.postValue("");
+        clickLiveData.postValue("create");
     }
 
 }
